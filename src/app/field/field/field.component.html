@@ -21,12 +21,64 @@
       [style.left.px]="tileIndex * tileWidth"
       class="tile"
     >
-      <div *ngIf="tile != 2" class="fill" [ngClass]="'-color-' + tile">
-        {{ tile }}
-      </div>
       <div *ngIf="tile == 2" class="fill" [ngClass]="'-color-' + tile">
         <img
-          src="https://www.w3schools.com/html/pic_trulli.jpg"
+          src="assets/Bulent_Ozcelik.png"
+          alt="Trulli"
+          width="90"
+          height="90"
+        />
+      </div>
+      <div *ngIf="tile == 4" class="fill" [ngClass]="'-color-' + tile">
+        <img src="assets/Ozan Tercan.PNG" alt="Trulli" width="90" height="90" />
+      </div>
+      <div *ngIf="tile == 8" class="fill" [ngClass]="'-color-' + tile">
+        <img
+          src="assets/Eren_erkayaoglu.png"
+          alt="Trulli"
+          width="90"
+          height="90"
+        />
+      </div>
+      <div *ngIf="tile == 16" class="fill" [ngClass]="'-color-' + tile">
+        <img src="assets/Ural Alanya.jpg" alt="Trulli" width="90" height="90" />
+      </div>
+      <div *ngIf="tile == 32" class="fill" [ngClass]="'-color-' + tile">
+        <img
+          src="assets/Saygin_Kaplan.png"
+          alt="Trulli"
+          width="90"
+          height="90"
+        />
+      </div>
+      <div *ngIf="tile == 64" class="fill" [ngClass]="'-color-' + tile">
+        <img src="assets/Aydin.png" alt="Trulli" width="90" height="90" />
+      </div>
+      <div *ngIf="tile == 128" class="fill" [ngClass]="'-color-' + tile">
+        <img src="assets/Yasin Avsar.JPG" alt="Trulli" width="90" height="90" />
+      </div>
+      <div *ngIf="tile == 256" class="fill" [ngClass]="'-color-' + tile">
+        <img
+          src="assets/Hasan_Ozkan_Erbas.jpeg"
+          alt="Trulli"
+          width="90"
+          height="90"
+        />
+      </div>
+      <div *ngIf="tile == 512" class="fill" [ngClass]="'-color-' + tile">
+        <img src="assets/Nihan.jpg" alt="Trulli" width="90" height="90" />
+      </div>
+      <div *ngIf="tile == 1024" class="fill" [ngClass]="'-color-' + tile">
+        <img
+          src="assets/Deniz_Ipekkan.jpg"
+          alt="Trulli"
+          width="90"
+          height="90"
+        />
+      </div>
+      <div *ngIf="tile == 2048" class="fill" [ngClass]="'-color-' + tile">
+        <img
+          src="assets/Altan_Yavas.jfif"
           alt="Trulli"
           width="90"
           height="90"
@@ -36,16 +88,144 @@
   </div>
 </div>
 
-<div class="info">
-  2048 Game by Angular 2<br />
-  <a href="https://nvx.me">Sasha Novik</a> |
-  <a href="https://github.com/Navix/ng-2048">GitHub</a>
+<div class="row">
+  <button type="button" class="btn btn-primary btn-block" style="font-size: 25px; margin-top: 25px;" (click)="onRefresh()">Reset</button>
 </div>
-
-<!--<div class="actions">
-  <button (click)="fillRandom()">Create random tile</button>
-  <button (click)="moveRight()">&rarr;</button>
-  <button (click)="moveLeft()">&larr;</button>
-  <button (click)="moveUp()">&uarr;</button>
-  <button (click)="moveDown()">&darr;</button>
-</div>-->
+<div class="mt-5" style="text-align: center; padding-top: 100px">
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img
+        src="assets/Bulent_Ozcelik.png"
+        alt="Trulli"
+        width="90"
+        height="90"
+      />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-2 ng-star-inserted">2</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img src="assets/Ozan Tercan.PNG" alt="Trulli" width="90" height="90" />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-4 ng-star-inserted">4</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img
+        src="assets/Eren_erkayaoglu.png"
+        alt="Trulli"
+        width="90"
+        height="90"
+      />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-8 ng-star-inserted">8</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img src="assets/Ural Alanya.jpg" alt="Trulli" width="90" height="90" />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-16 ng-star-inserted">16</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img src="assets/Saygin_Kaplan.png" alt="Trulli" width="90" height="90" />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-32 ng-star-inserted">32</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img src="assets/Aydin.png" alt="Trulli" width="90" height="90" />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-64 ng-star-inserted">64</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img src="assets/Yasin Avsar.JPG" alt="Trulli" width="90" height="90" />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-128 ng-star-inserted">128</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img
+        src="assets/Hasan_Ozkan_Erbas.jpeg"
+        alt="Trulli"
+        width="90"
+        height="90"
+      />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-256 ng-star-inserted">256</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img src="assets/Nihan.jpg" alt="Trulli" width="90" height="90" />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-512 ng-star-inserted">512</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img src="assets/Deniz_Ipekkan.jpg" alt="Trulli" width="90" height="90" />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-1024 ng-star-inserted">1024</div>
+    </div>
+  </div>
+  <div class="card mb-3" style="display: inline-block; margin-right: 30px">
+    <div class="fill">
+      <img src="assets/Altan_Yavas.jfif" alt="Trulli" width="90" height="90" />
+    </div>
+    <div
+      class="tile ng-tns-c1-0 ng-trigger ng-trigger-tile ng-star-inserted"
+      style="height: 100px; width: 100px; transform: translateX(0px) scale(1);margin-left:-5px"
+    >
+      <div class="fill ng-tns-c1-0 -color-2048 ng-star-inserted">2048</div>
+    </div>
+  </div>
+</div>

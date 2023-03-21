@@ -23,17 +23,17 @@ export class FieldComponent implements OnInit, AfterViewChecked {
 
   tileWidth = 100;
 
-  private animations: AnimationState;
+  private animations: AnimationState | undefined;
 
-  private animationsView: AnimationState;
+  public animationsView!: AnimationState;
 
   private field: FieldState = new Array(size).fill(null).map(_ => new Array(size).fill(null));
 
-  private fieldMergeBlock: boolean[][];
+  private fieldMergeBlock: boolean[][]  | undefined;
 
-  private fieldView: FieldState;
+  public fieldView: FieldState  | undefined;
 
-  private grid = new Array(size).fill(new Array(size).fill(null));
+  public grid = new Array(size).fill(new Array(size).fill(null));
 
   constructor() {
   }
@@ -69,9 +69,9 @@ export class FieldComponent implements OnInit, AfterViewChecked {
     this.moveUp();
   };
 
-  clone(state) {
-    let copy = [];
-    state.forEach(row => {
+  clone(state: any) {
+    let copy : any = [];
+    state.forEach((row: any) => {
       copy.push([...row]);
     });
     return copy;
@@ -83,7 +83,7 @@ export class FieldComponent implements OnInit, AfterViewChecked {
 
   fillRandom() {
     // gather empty
-    let empties = [];
+    let empties: any = [];
     let max = baseValue;
     this.field.forEach((row, rowIndex) => {
       row.forEach((tile, tileIndex) => {
@@ -132,7 +132,7 @@ export class FieldComponent implements OnInit, AfterViewChecked {
               const diff = mergeResult === true ? searchIndex - rowIndex + 1 : searchIndex - rowIndex;
               if (diff !== 0) {
                 moved = true;
-                this.animations[rowIndex][tileIndex] = `moveDown-${diff}`;
+                (<any>this.animations)[rowIndex][tileIndex] = `moveDown-${diff}`;
               }
               break;
             }
@@ -163,7 +163,7 @@ export class FieldComponent implements OnInit, AfterViewChecked {
               const diff = mergeResult === true ? tileIndex - searchIndex + 1 : tileIndex - searchIndex;
               if (diff !== 0) {
                 moved = true;
-                this.animations[rowIndex][tileIndex] = `moveLeft-${diff}`;
+                (<any>this.animations)[rowIndex][tileIndex] = `moveLeft-${diff}`;
               }
               break;
             }
@@ -194,7 +194,7 @@ export class FieldComponent implements OnInit, AfterViewChecked {
               const diff = mergeResult === true ? searchIndex - tileIndex + 1 : searchIndex - tileIndex;
               if (diff !== 0) {
                 moved = true;
-                this.animations[rowIndex][tileIndex] = `moveRight-${diff}`;
+                (<any>this.animations)[rowIndex][tileIndex] = `moveRight-${diff}`;
               }
               break;
             }
@@ -225,7 +225,7 @@ export class FieldComponent implements OnInit, AfterViewChecked {
               const diff = mergeResult === true ? rowIndex - searchIndex + 1 : rowIndex - searchIndex;
               if (diff !== 0) {
                 moved = true;
-                this.animations[rowIndex][tileIndex] = `moveUp-${diff}`;
+                (<any>this.animations)[rowIndex][tileIndex] = `moveUp-${diff}`;
               }
               break;
             }
@@ -270,21 +270,21 @@ export class FieldComponent implements OnInit, AfterViewChecked {
     const destTileIndex = direction === 'left' ? tileIndex - 1 : direction === 'right' ? tileIndex + 1 : tileIndex;
     // check edges
     if (destRowIndex >= 0 && destRowIndex < size && destTileIndex >= 0 && destTileIndex < size) {
-      if (this.fieldMergeBlock[destRowIndex][destTileIndex]) {
+      if ((<any>this.fieldMergeBlock)[destRowIndex][destTileIndex]) {
         // already merged tile
         return null;
       } else {
         if (field[destRowIndex][destTileIndex] === null) {
           // move to destination
           field[destRowIndex][destTileIndex] = tileValue;
-          field[rowIndex][tileIndex] = null;
+          (<any>field[rowIndex][tileIndex]) = null;
           return false;
         } else if (field[destRowIndex][destTileIndex] === tileValue) {
           // merge with destination
           field[destRowIndex][destTileIndex] *= 2;
-          field[rowIndex][tileIndex] = null;
+          (<any>field[rowIndex][tileIndex]) = null;
           // mark merged tile (not it not available to another merge)
-          this.fieldMergeBlock[destRowIndex][destTileIndex] = true;
+          (<any>this.fieldMergeBlock)[destRowIndex][destTileIndex] = true;
           return true;
         }
         else {
@@ -297,5 +297,22 @@ export class FieldComponent implements OnInit, AfterViewChecked {
       // this is the edge
       return null;
     }
+  }
+
+  onRefresh(){
+
+  this.animations = undefined;
+
+  this.animationsView = [];
+
+  this.field= new Array(size).fill(null).map(_ => new Array(size).fill(null));
+
+  this.fieldMergeBlock = undefined;
+
+  this.fieldView = undefined;
+
+  this.grid = new Array(size).fill(new Array(size).fill(null));
+
+  this.ngOnInit();
   }
 }

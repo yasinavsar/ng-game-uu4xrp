@@ -95,3 +95,18 @@
     color: #ace65d;
   }
 }
+
+.numberCircle {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+
+  background: #fff;
+  border: 2px solid #666;
+  color: #666;
+  text-align: center;
+  margin-left: 16px;
+
+  font: 20px Arial, sans-serif;
+}
