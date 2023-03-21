@@ -35,6 +35,18 @@ export class FieldComponent implements OnInit, AfterViewChecked {
 
   public grid = new Array(size).fill(new Array(size).fill(null));
 
+  bulent = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Bulent_Ozcelik.png";
+  ozan = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Ozan%20Tercan.PNG";
+  eren = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Eren_erkayaoglu.png";
+  ural = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Ural%20Alanya.png";
+  saygin = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Saygin_Kaplan.png";
+  aydin = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Aydin.png";
+  yasin = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Yasin%20Avsar.JPG";
+  ozkan = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Hasan_Ozkan_Erbas.jpeg";
+  nihan = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Nihan.png";
+  deniz = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Deniz_Ipekkan.jpg";
+  altan = "https://raw.githubusercontent.com/yasinavsar/ng-game-uu4xrp/main/src/assets/Altan_Yavas.png";
+
   constructor() {
   }
 
