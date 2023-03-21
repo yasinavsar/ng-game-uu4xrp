@@ -4,10 +4,11 @@
 
 html {
   background: #371722 !important;
-  color: #bbab9b;
+  color: #BBAB9B;
   font-family: 'Baloo Thambi', cursive;
   font-size: 14px;
 }
+
 
 .btn {
   display: inline-block;
@@ -37,10 +38,7 @@ html {
   border-color: #2e6da4;
 }
 
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+button, [type=button], [type=reset], [type=submit] {
   -webkit-appearance: button;
 }
 
